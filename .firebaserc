@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angulardemo-6a542": {
+      "hosting": {
+        "firebase-demo": [
+          "angulardemo-6a542"
+        ]
+      }
+    }
+  }
+}

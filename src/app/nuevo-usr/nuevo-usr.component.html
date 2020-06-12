@@ -1,0 +1,13 @@
+<div class="container border">
+    <h5>Crear Usuario</h5>
+
+    <form>
+        <label>Nombre: <input #nom type="text" name="nombre" required></label>
+        <br>
+        <label>Email: <input #email type="email" name="correo" required></label>
+        <br>
+        <label>Password: <input #passwd type="text" name="password" required></label>
+        <br>
+        <button class="btn btn-outline-success" type="button" (click)="crearUsuario(nom.value,email.value,passwd.value)">Crear usuario</button>
+    </form>
+</div>

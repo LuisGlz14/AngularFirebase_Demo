@@ -1,0 +1,36 @@
+<div class="container border mb-5">
+    <h2>Articulos</h2>
+    <hr><br>
+
+    <h4>Agregar articulos</h4>
+
+    <form>
+        <label>Nombre: <input #nom type="text" name="articulo" required></label>
+        <br>
+        <label>Cantidad: <input #cant type="number" name="cantidad" required></label>
+        <br>
+        <label>Color: <input #color type="text" name="color" required></label>
+        <br>
+        <button class="btn btn-outline-info" type="button"
+            (click)="agregarObjeto(nom.value,cant.value,color.value)">Agregar articulo</button>
+    </form>
+    <hr><br>
+
+    <h5>Datos de articulos</h5>
+    <div *ngIf="articulos.length > 0">
+        <table class="table table-bordered table-striped text-center">
+            <tr>
+                <th>Nombre</th>
+                <th>Color</th>
+                <th>Cantidad</th>
+            </tr>
+            <ng-container *ngFor="let art of articulos">
+                <tr>
+                    <td>{{art.nombre}}</td>
+                    <td>{{art.color}}</td>
+                    <td>{{art.cantidad}}</td>
+                </tr>
+            </ng-container>
+        </table>
+    </div>
+</div>

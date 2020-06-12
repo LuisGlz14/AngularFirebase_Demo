@@ -1,0 +1,18 @@
+<div class="container border">
+    <h5>Iniciar Sesion</h5>
+
+    <div *ngIf="usrConectado == false">
+        <form>
+            <label>Email: <input #email type="email" name="correo" required></label>
+            <br>
+            <label>Password: <input #passwd type="password" name="password" required></label>
+            <br>
+            <button class="btn btn-outline-primary" type="button" (click)="loguear(email.value,passwd.value)">Iniciar Sesion</button>
+        </form>
+    </div>
+
+    <div *ngIf="usrConectado == true">
+        <p>Usuario conectado: {{usuario.nombre}}</p>
+        <button class="btn btn-outline-danger" (click)="logout()">Cerrar Sesion</button>
+    </div>
+</div>
