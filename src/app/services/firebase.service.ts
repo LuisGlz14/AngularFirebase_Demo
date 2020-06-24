@@ -56,7 +56,7 @@ export class FirebaseService {
   }
 
   agregarArticulo(obj: Articulo) {
-    this.db.collection('articulos').add({
+    this.db.collection('prueba').add({
       nombre: obj.nombre,
       cantidad: parseInt(obj.cantidad, 10),
       color: obj.color,
@@ -66,11 +66,16 @@ export class FirebaseService {
       console.error(errorCode, errorMessage);
       alert('Error al grabar en la base de datos');
     });
+
+    // this.db.collection('Prueba1').doc('Asdf').collection('Prueba2').add({
+    //   nom: 'Hola',
+    //   cant: 10
+    // });
   }
 
   cargarArticulos() {
-    const query = this.db.collection<Articulo>('articulos',
-                    ref => ref.orderBy('cantidad', 'asc').limit(10));
+    const query = this.db.collection('articulos',
+                    ref => ref.orderBy('cantidad', 'asc').limit(3));
     return query.valueChanges();
   }
 
