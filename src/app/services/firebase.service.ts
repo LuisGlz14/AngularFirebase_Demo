@@ -9,7 +9,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class FirebaseService {
 
 
-  constructor(private db: AngularFirestore, private auth: AngularFireAuth){}
+  constructor(private db: AngularFirestore, private auth: AngularFireAuth) {}
 
 
   async crearNuevoUsuario(nombre: string, correo: string, passwd: string) {

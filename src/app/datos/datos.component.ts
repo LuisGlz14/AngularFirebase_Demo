@@ -21,7 +21,7 @@ export class DatosComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  agregarObjeto(nom: string, cant: string, col: string){
+  agregarObjeto(nom: string, cant: string, col: string) {
     const art: Articulo = {
       nombre: nom,
       cantidad: cant,
