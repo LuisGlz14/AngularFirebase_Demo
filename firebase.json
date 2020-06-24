@@ -10,6 +10,10 @@
       ],
       "rewrites": [
         {
+          "source": "angulardemo-6a542/us-central1/hello-world",
+          "function": "app"
+        },
+        {
           "source": "**",
           "destination": "/index.html"
         }

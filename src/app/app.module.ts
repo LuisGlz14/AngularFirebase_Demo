@@ -31,7 +31,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule
   ],
   providers: [
-    {provide: ORIGIN, useValue: 'http://localhost:5001' }
+    {provide: ORIGIN, useValue: 'https://angulardemo-6a542.web.app' }
   ],
   bootstrap: [AppComponent]
 })
