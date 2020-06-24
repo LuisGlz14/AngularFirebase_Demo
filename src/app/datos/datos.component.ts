@@ -17,11 +17,14 @@ export class DatosComponent implements OnInit {
       // console.log('Res: ', res);
     });
 
+    console.log('1', firebase.peticion());
+    console.log('2', firebase.peticion().subscribe());
+
     firebase.peticion().subscribe( data => {
       console.log('datos', data);
-    }, err =>{
+    }, err => {
       console.error(err);
-    })
+    });
   }
 
   ngOnInit(): void {
