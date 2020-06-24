@@ -14,8 +14,14 @@ export class DatosComponent implements OnInit {
   constructor(private firebase: FirebaseService) {
     this.firebase.cargarArticulos().subscribe((res: Articulo[]) => {
       this.articulos = res;
-      console.log('Res: ', res);
+      // console.log('Res: ', res);
     });
+
+    firebase.peticion().subscribe( data => {
+      console.log('datos', data);
+    }, err =>{
+      console.error(err);
+    })
   }
 
   ngOnInit(): void {

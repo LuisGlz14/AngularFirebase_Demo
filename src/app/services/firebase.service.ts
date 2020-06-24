@@ -1,3 +1,4 @@
+import { AngularFireFunctions, ORIGIN } from '@angular/fire/functions';
 import { Articulo } from './../models/articulo.model';
 import { Injectable, EventEmitter } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -9,7 +10,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class FirebaseService {
 
 
-  constructor(private db: AngularFirestore, private auth: AngularFireAuth) {}
+  constructor(private db: AngularFirestore, private auth: AngularFireAuth, private funcs: AngularFireFunctions) {
+    // this.funcs.useFunctionsEmulator();
+  }
 
 
   async crearNuevoUsuario(nombre: string, correo: string, passwd: string) {
@@ -78,5 +81,12 @@ export class FirebaseService {
                     ref => ref.orderBy('cantidad', 'asc').limit(3));
     return query.valueChanges();
   }
+
+  peticion() {
+    const callable = this.funcs.httpsCallable('hello-world');
+    return callable({ name: 'algo'});
+  }
+
+
 
 }

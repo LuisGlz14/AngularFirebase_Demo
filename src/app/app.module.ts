@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireFunctionsModule, ORIGIN } from '@angular/fire/functions';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './login/login.component';
 import { NuevoUsrComponent } from './nuevo-usr/nuevo-usr.component';
@@ -26,9 +27,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFireFunctionsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    {provide: ORIGIN, useValue: 'http://localhost:5001' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
